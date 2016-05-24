@@ -37,7 +37,7 @@
                     <source src="testingpages/phaser/roadsafetygame/media/lakeambience1-loop.mp3" type="audio/mpeg">
                 </audio>
                 <audio id="bgCity" loop>
-                    <source src="testingpages/phaser/roadsafetygame/media/cityhum1-cut.mp3" type="audio/mpeg">
+                    <source src="testingpages/phaser/roadsafetygame/media/cityhum1-loop.mp3" type="audio/mpeg">
                 </audio>
                 <div id="contentWrapper">
                     <nav id="navigation">
