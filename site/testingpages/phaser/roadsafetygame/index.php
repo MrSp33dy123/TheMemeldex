@@ -8,7 +8,7 @@
         <meta name="author" content="Ollie Roozen">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title></title>
+        <title>JAYWALKER</title>
         <meta property="og:site_name" content="JAYWALKER">
         <meta property="og:description" content="">
         <meta property="og:title" content="The MEMELDEX - <?php echo $pageTitle ?>">
@@ -18,6 +18,7 @@
         <meta property="og:image:width" content="300">
         <meta property="og:image:height" content="300">
         <link rel="stylesheet" type="text/css" href="testingpages/phaser/roadsafetygame/mainstyle.css">
+        <link rel="stylesheet" type="text/css" href="libraries/font-awesome-4.5.0/css/font-awesome.min.css">
         <script src="libraries/jquery-2.2.3.min.js" type="text/javascript" defer="false"></script>
         <script src="testingpages/phaser/roadsafetygame/libraries/typed.min.js" type="text/javascript" defer="true"></script>
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvvmPGE775sxXoxt-VtAEQasBEYHkQ-LU" type="text/javascript"></script>
@@ -48,10 +49,11 @@
                     </nav>
                     <div id="content">
                         <div id="loadingText" class="centered"><p></p><br><p></p></div>
-                        <a id="title" class="centered" onclick="initMap();" style="display:none;">
+                        <a id="title" class="centered" onclick="initGame();" style="display:none;">
                             <div class="main" style="display:none;"><span>J</span><span>A</span><span>Y</span><span>W</span><span>A</span><span>L</span><span>K</span><span>E</span><span>R</span></div><br>
                             <div class="sub error" style="display:none;">A Road Safety Game</div>
                         </a>
+                        <div id="muteButton" class="fa fa-volume-up" aria-hidden="true"></div>
                         <div id="map" style="height:100vh; width:100vw;"></div>
                     </div>
                 </div>

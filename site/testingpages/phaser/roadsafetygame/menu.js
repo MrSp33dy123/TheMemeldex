@@ -67,7 +67,6 @@ function titleEntrance() {
 function backgroundMouseGradient(event) {
     var diffrential = Math.sqrt((event.pageX-=$(window).width()/2)*event.pageX + (event.pageY-=$(window).height()/2)*event.pageY);
     var threshold = $(window).height() * 1.35
-    console.log("Diffrential% = " + (100 - ((diffrential / threshold) * 200)));
     
     $("#bgVideo").css("-webkit-filter","blur(5px) brightness(50%) grayscale("+ ((diffrential / threshold) * 200) +"%)");
 }
@@ -76,7 +75,6 @@ function backgroundMouseGradient(event) {
 
 $(document).mousemove(function(event){
     throttle(backgroundMouseGradient(event), 80);
-    console.log(event.pageX + ", " + event.pageY);
 });
 
 
