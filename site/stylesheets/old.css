@@ -1,0 +1,929 @@
+html,body {
+	margin:0;
+	padding:0;
+	height:100%;
+	border-style:none;
+	background-color:RGB(90, 90, 90);
+	background:linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("http://thememeldexstatic.altervista.org/assets/webpagebackgrounds/MemesComplaition.jpg");
+	background-repeat:repeat;
+}
+a {
+	cursor:pointer;
+}
+a:visited{
+	text-decoration:none;
+	color:white;
+}
+input:focus, button:focus {
+    outline:none;
+}
+
+#wrapper {
+	min-height:100%;
+	position:relative;
+	z-index:0;
+}
+
+/*--------------------------------------------------------------------------------------------*/
+#navigation {
+	width:100%;
+	font-family:'Oswald', Arial, sans-serif;
+	font-size:100%;
+	color:white;
+	position:relative;
+}
+#navigation > ul {
+	font-family:inherit;
+    margin:0px; /* This moves the list down and to the right, the higher the value is. */
+    padding:0px; /* This increases or decreases the 'padding' around the content of the list. The padding area will also contain the list background. */
+    overflow:visible; /* This decides what the browser does if the text goes over the amount of space the area has. */
+    list-style:none; /* This is here to remove the numbers and/or bullet points from the list */
+    text-align:center; /* This aligns all the text to center for everything inside the list. */
+	border-width:0px;
+	z-index:5;
+	-webkit-backdrop-filter:blur(10px);
+}
+#navigation div.background {
+	position:absolute;
+	top: 0px;
+	right:0px;
+	bottom:0px;
+	left:0px;
+	z-index:-1;
+	background-color:RGBA(95, 158, 160, 0.6); /* The colour of the background of the list. */
+	border-top:solid 2px RGBA(95, 158, 160, 0.0);
+	transition:all linear 400ms;
+}
+#navigation  li {
+	display:inline-block;
+	padding:0px;
+	transition:all linear 0.08s;
+}
+#navigation li a {
+	display:inline-block;
+    padding:10px;
+	color:inherit;
+	text-decoration:none;
+	font-size:inherit;
+}
+#navigation li a.active {
+    background-color:RGBA(95, 158, 160, 0.85);
+}
+#navigation li:hover {
+   background-color:RGB(50,70,70);
+   box-shadow:3px 3px 6px 3px RGB(40,60,60) inset;	
+}
+#navigation li a:active {
+    color:white;
+}
+#navigation li:hover ~ div.background {
+	background-color:RGBA(50,50,50, 0.8);
+	border-top:solid 2px RGB(95, 158, 160);
+}
+#navigation .testing {
+	color:yellow;
+}
+.mainMenu:after {
+    display:block;
+    clear:both;
+}
+.navMenu {
+    padding:8px;
+	padding-left:0px;
+	padding-right:0px;
+    position:absolute;
+	z-index:-20;
+    opacity:0;
+	color:inherit;
+	transition:opacity linear 150ms, background-color linear 400ms, border linear 250ms;
+	box-shadow:0px 2px 3px rgba(0,0,0,0.2);
+}
+.dropDown {
+    top:100%;
+	left:-50%;
+	width:200%;
+}
+#navigation > ul > li {
+    position:relative;
+}
+.dropDown li {
+    display:block;
+	width:100%;
+	position:relative;
+}
+.dropDown li a {
+    display:inherit;
+	width:100%;
+	box-sizing:border-box;
+}
+/* ---------------------------------SUBMENU RIGHT-----------------------------------*/
+.dropDown li a + .subMenu {
+	left:100%;
+	top:0%;
+	display:inline-block;
+	width:100%;
+	background-color:RGBA(50,50,50, 0.8);
+	box-sizing:border-box;
+	border-left:solid 2px RGBA(95, 158, 160, 0);
+	border-right:solid 2px RGBA(95, 158, 160, 0);
+}
+.dropDown li a:hover + .subMenu, .subMenu:hover {
+	opacity:1;
+	z-index:15;
+}
+.subMenu:hover {
+	border-left:solid 2px RGB(95, 158, 160) !important;
+}
+
+/* ---------------------------------------------------------------------------------*/
+
+.arrow-down {
+	font-size:12px;
+    line-height:0px;
+}
+.mainMenu li:hover .dropDown {
+    z-index:5;
+    opacity:1;
+    background-color:RGBA(50,50,50, 0.8);
+}
+.dropDown:hover {
+	
+}
+.contentBoxHeader {
+	border-bottom:inherit;
+	margin-left:10px;
+	margin-right:10px;
+	padding-left:8px;
+	text-align:left;
+}
+.contentBoxHeader h1 {
+	font-style:normal;
+	color:inherit;
+	font-family:'Oswald', open-sans;
+	font-weight:400;
+	margin:0px;
+	line-height:180%;
+}
+.centerSingular {
+	color:inherit;
+	text-align:left;
+	display:block;
+	box-sizing:border-box;
+}
+#bodyWrapper {
+	min-width:100%;
+	min-height:100%;
+	text-align:center;
+	display:inline-block;
+	box-sizing:border-box;
+	padding-left:18px;
+	padding-right:18px;
+	overflow:hidden;
+	position:relative;
+}
+/* ----------------------------------Notification And Error Boxes----------------------------------------- */
+
+/* -------------------------------------Javascript Error Box---------------------------------------------- */
+#javascriptError {
+	border-color:RGB(240,128,128) !important;
+}
+#javascriptError p.textBackground {
+    color:RGBA(240,128,128,0.22);
+	position:absolute;
+	left:25px;
+}
+/* ----------------------------------Notifications Box----------------------------------------- */
+
+/* -------------------------------------------------------------------------------------------- */
+table input {
+	width:100%;
+}
+table.input p.label {
+    text-align:right;
+}
+div.survey {
+    text-align:center;
+}
+input[type="range"] {
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    width: 100%; /* Specific width is required for Firefox. */
+    padding:0px;
+    border:none;
+    background:none;
+    margin:0px;
+
+}
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+input[type="range"]:focus {
+    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+input[type="range"]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+    background: transparent; /* Hides the slider so custom styles can be added */
+    border-color: transparent;
+    color: transparent;
+}
+.showOnCondition {
+    max-width:5px;
+    opacity:0;
+    transition:max-width ease-in-out 900ms, opacity linear 900ms;
+    overflow:hidden;
+    display:inline-block;
+    white-space: nowrap;
+}
+.onoffswitch > input ~ .showOnCondition {
+    
+}
+
+input[type="checkbox"]:checked  + .showOnCondition, .onoffswitch > input:checked ~ .showOnCondition {
+    max-width:1000px;
+    opacity:1;
+}
+.spinningInfinite {
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 1000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spin;
+    -moz-animation-duration: 1000ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spin;
+    -ms-animation-duration: 1000ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+    -o-transition: rotate(3600deg);
+}
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+.sectionActivate {
+    display:block;
+    position:relative;
+    text-align:center;
+    overflow:hidden;
+}
+.sectionActivate > div.spinningInfinite {
+    background-image:url("http://thememeldexstatic.altervista.org/assets/buttons/ShutterLens.png");
+    background-size:contain;
+    height:130px;
+    width:130px;
+    display:inline-block;
+    border: solid 2px RGB(95, 158, 160);
+    border-radius:100%;
+    box-sizing:border-box;
+    z-index:1;
+}
+.sectionActivate > .label {
+    position: absolute;
+    border: solid 2px RGB(95, 158, 160);
+    border-radius:3px;
+    padding:12px;
+    padding-bottom:4px;
+    padding-top:4px;
+    background-color:#5E5E5E;
+    font-family:'Oswald', open-sans, sans-serif;
+    letter-spacing:1px;
+    font-size:22px;
+    -webkit-user-select:none; 
+	-moz-user-select:none; 
+	-ms-user-select: none;
+	display:inline-block;
+    z-index:2;
+    cursor: pointer; cursor: hand;
+}
+.centeredY {
+    top: 50%;
+    transform: translate(0%, -50%);
+    position:relative;
+}
+.centeredX {
+    position:relative;
+    left: 50%;
+    transform: translate(-50%);
+}
+.sectionActivate > .label:active, .sectionActivate > .label:active ~ div.spinningInfinite {
+    border-color:RGB(95,158,220);
+}
+#surveyBox form p {
+    text-align:center;
+}
+.survey {
+    
+}
+div.activateSurvey > .sectionToActivate {
+    visibility:hidden;
+    position:relative;
+}
+div.activateSurvey .textBackground {
+    font-family:FontAwesome;
+    font-style:normal;
+    font-weight:120%;
+    text-decoration: inherit;
+    opacity:0;
+    font-size: 44px;
+    color:#5E5E5E;
+    position:absolute;
+    top:0%;
+    vertical-align:middle;
+    text-align:center;
+    left:0px;
+    width:100%;
+    z-index:-1;
+    transition:opacity linear 150ms, color linear 150ms;
+}
+div.activateSurvey > label:hover > .textBackground {
+    color:RGB(50,50,50); 
+    opacity:1;
+}
+div.activateSurvey > label:hover {
+    background-color:RGB(74,105,105);
+}
+div.activateSurvey > #activateView:checked ~ div.sectionToActivate {
+    display:block;
+    visibility:visible;
+    -webkit-animation-name: fadeInDownBig;
+    animation-name: fadeInDownBig;
+    -webkit-animation-timing-function:cubic-bezier(0.32, 0.72, 0.56, 0.99);
+    animation-timing-function:cubic-beziercubic-bezier(0.32, 0.72, 0.56, 0.99);
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+}
+div.activateSurvey > #activateView:checked, div.activateSurvey > #activateView:checked ~ .buttonDisplay {
+    -webkit-animation-name: rollOut;
+    animation-name: rollOut;
+    -webkit-animation-timing-function:cubic-bezier(0.32, 0.72, 0.56, 0.99);
+    animation-timing-function:cubic-beziercubic-bezier(0.32, 0.72, 0.56, 0.99);
+    -webkit-animation-duration: 380ms;
+    animation-duration: 380ms;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    visibility:hidden;
+    height:0px;
+    transition:visibility linear 0ms 380ms, height ease-in-out 1000ms;
+}
+input#activateView {
+    display:none;
+}
+#content p > a {
+	text-decoration:none;
+	color:inherit;
+	border-bottom:dotted 1px gray;
+	transition:all linear 100ms;
+}
+#content p > a:hover {
+	border-bottom:solid 1px white;
+}
+#content {
+	padding-top:25px;
+	padding-bottom:300px;
+	max-width:1200px;
+	width:100%;
+	min-height:100vh;
+	font-family:Arial, sans-serif;
+	display:inline-block;
+	text-align:center;
+	color:white;
+	box-sizing:border-box;
+}
+#content p {
+	margin:0px;
+}
+#content .contentBox, div.notificationErrorBox {
+	color:inherit;
+	border:solid 2px RGB(95, 158, 160);
+	border-radius:3px;
+	background-color:RGBA(35,35,35, 0.97);
+}
+#content #signUpPage div.main {
+	text-align:right;
+}
+#content #signUpPage div.main div.label {
+	text-align:right;
+	float:left;
+	width:20%;
+}
+#content #signUpPage div.main input {
+	width:100%;
+}
+#content #signUpPage table {
+	width:100%;
+}
+#content #signUpPage table input {
+	margin-top:10px;
+	margin-bottom:10px;
+}
+#content #signUpPage table tr > td:nth-of-type(2) {
+	width:85%;
+}
+/* ----------------------------------Main Index Page----------------------------------------- */
+#content #mainPage {
+	width:100%;
+	display:inline-block;
+	vertical-align:top;
+	position:relative;
+}
+#content #mainPage > div {
+	display:inherit;
+}
+#content #mainPage > #centreBox {
+	float:none;
+	margin-right:350px;
+	top:0px;
+	left:0px;
+	position:absolute;
+	display:inline-block;
+}
+#content #mainPage > #rightBox {
+	width:302px;
+	float:right;
+	display:block;
+}
+/* ----------------------------------On-Off Switch------------------------------------------- */
+.onOffSwitch {
+	-webkit-user-select:none; 
+	-moz-user-select:none; 
+	-ms-user-select: none;
+	display:inline-block;
+	margin-top:8px;
+	margin-bottom:8px;
+}
+.onOffSwitch-checkbox {
+	display:none;
+}
+.onOffSwitch-shutter {
+	background-image:url("http://thememeldexstatic.altervista.org/assets/buttons/ShutterLens.png");
+	background-size:contain;
+	width:33px;
+	height:33px;
+	float:left;
+	position:absolute;
+	border:solid 2px RGB(95, 158, 160);
+	border-radius:100%;
+	top:-4px;
+	z-index:1;
+	-webkit-transition: -webkit-transform ease-in-out 760ms;
+	-moz-transition: -moz-transform ease-in-out 760ms;
+	transition: transform ease-in-out 760ms;
+}
+.onOffSwitch-icon:before {
+	content:"\f00d";
+	color:red;
+	font-size:25px;
+	line-height:33px;
+}
+.onOffSwitch-icon {
+	position:absolute;
+	width:37px;
+	text-align:center;
+	z-index:2;
+	font-family:FontAwesome;
+	top:-2px;
+}
+.onOffSwitch-label {
+	position:relative;
+	display:inline-block;
+	cursor: pointer;
+}
+.onOffSwitch-text {
+	left:20px;
+	position:relative;
+	border:solid 2px RGB(95, 158, 160);
+	border-radius:3px;
+	line-height:25px;
+	vertical-align:middle;
+	padding-left:21px;
+	padding-right:6px;
+	font-family:'Oswald', Arial, sans-serif;
+	text-shadow:1px;
+	letter-spacing:1px;
+	background-color:#5E5E5E;
+}
+.onOffSwitch-checkbox:checked + .onOffSwitch-label .onOffSwitch-icon:before {
+	content:"\f00c";
+	color:green;
+}
+.onOffSwitch-checkbox:checked + .onOffSwitch-label .onOffSwitch-shutter {
+	-webkit-transform: rotate(360deg);
+	-moz-transform: rotate(360deg);
+	transform: rotate(360deg);
+}
+/* --------------------------------------On/Off Switch V2 Square----------------------------------------- */
+.onoffswitch {
+    position: relative;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+    display:inline-block;
+    height:28px;
+}
+.onoffswitch span {
+    text-align:left;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: inline-block; 
+	overflow: hidden; 
+	cursor: pointer;
+    border:solid 2px RGB(95, 158, 160);
+	border-radius: 29px;
+    margin-right:3px;
+    width:65px;
+    float:left;
+    z-index:2;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 16px; padding: 0; line-height: 16px;
+    font-size: 14px; color: white; font-family:'Oswald', open-sans; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "YES";
+    padding-left: 14px;
+    color: #FFFFFF;
+	background-color:#5E5E5E;
+}
+.onoffswitch-inner:after {
+    content: "NO";
+    padding-right: 14px;
+    background-color:#5E5E5E; 
+	color:white;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; 
+	width: 22px;
+    height: 22px; 
+	margin: -3px;
+    background:RGB(75,75,75);
+    position: absolute; top: 0; bottom: 0;
+    left: 1px;
+    border:inherit; 
+	border-color:red;
+	border-radius: 29px;
+    transition: all 0.3s ease-in 0s; 
+    z-index:3;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+	border-color:green;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+   left: 50px; 
+}
+/* --------------------------------------------------BUTTONS---------------------------------------------------- */
+#content .button {
+	border:solid 2px RGB(95,158,160);
+	border-radius:3px;
+}
+/* ------------------------------------------------------------------------------------------------------------ */
+#content .main {
+	padding:18px;
+}
+/*#content #pageBackground {
+	background-color:RGBA(35,35,35,0.97);
+	border:solid 25px RGBA(35,35,35,0);
+}*/
+.notification404 img {
+	margin:22px;
+	width:50%;
+}
+a, input {
+	position:relative;
+}
+.hyperlink-square-backgroundIconFlash {
+	display:inline-block;
+    border: solid 2px RGB(95, 158, 160);
+    border-radius:3px;
+	text-align:center;
+	cursor:pointer;
+	background-color:#5E5E5E;
+	z-index:1;
+	-webkit-touch-callout:none;
+	-webkit-user-select:none;
+	-khtml-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select: none;
+	margin-right:6px;
+	margin-top:20px;
+}
+.hyperlink-square-backgroundIconFlash .textBackground {
+	font-family:FontAwesome;
+    font-style:normal;
+    font-weight:120%;
+    text-decoration: inherit;
+    opacity:0;
+    font-size: 30px;
+	color:#5E5E5E;
+    position:absolute;
+    top:0%;
+	vertical-align:middle;
+	text-align:center;
+	left:0px;
+	width:100%;
+	z-index:-1;
+	transition:opacity linear 150ms, color linear 150ms;
+}
+.hyperlink-square-backgroundIconFlash .text {
+	padding:3px 12px 3px 12px;
+	font-family:'Oswald', Arial, sans-serif;
+	letter-spacing:0.5px;
+	z-index:2;
+	margin:0px;
+}
+.hyperlink-square-backgroundIconFlash:hover {
+	background-color:RGB(74,105,105);
+}
+.hyperlink-square-backgroundIconFlash:hover .textBackground {
+	color:RGB(50,50,50); 
+	opacity:1;
+}
+.hyperlink-square-backgroundIconFlash:active {
+	border-color:RGB(95,158,220);
+}
+/* --------------------------------Section Divider--------------------------------------------- */
+div.sectionHeader {
+	height:18px;
+	margin-bottom:18px;
+}
+div.sectionHeader p {
+	float:left;
+	width:auto;
+	padding-right:7px !important;
+	padding-left:5px !important;
+	font-family:'Oswald';
+	line-height:100%;
+	font-style:italic;
+}
+div.sectionHeader div.horizontalDivider {
+	overflow:hidden;
+	top:50%;
+	position:relative;
+	height:2px;
+	box-sizing:border-box;
+	background: grey;
+    /* background: -moz-linear-gradient(left, rgba(54,54,54,0) 0%, grey 25px); 
+	background: -webkit-linear-gradient(left, rgba(54,54,54,0) 0%, grey 25px); 
+	background: linear-gradient(to right, rgba(54,54,54,0) 0%, grey 25px); */
+}
+div.sectionHeader div.leftLine {
+	height:2px;
+	width:22px;
+	background:grey;
+	float:left;
+	top:50%;
+	position:relative;
+}
+/* -------------------------------------------------------------------------------------------- */
+div.testingBox {
+	border-style:solid;
+	border-color:#EEF6F7;
+	background:#5E5E5E;
+	font-family:inherit;
+	display:block;
+}
+div.testingBox > div.main {
+	text-align:center;
+	font-size:125%;
+}
+div.dualColumn {
+	vertical-align:top;
+}
+div.dualColumn .contentBox {
+	text-align:left;
+}
+div.dualColumn > div {
+	width:50%;
+	box-sizing:border-box !important;
+	display:inline-block;
+}
+div.dualColumn > .leftBox {
+	padding-right:12px;
+}
+div.dualColumn > .rightBox {
+	float:right;
+	padding-left:12px;
+}
+div.errorMessages {
+	border: solid 2px RGB(240,128,128);
+	border-radius:3px;
+	display:none;
+	background-color:RGBA(240,128,128,0.14);
+	padding:6px;
+	padding-right:8px;
+	margin-top:18px;
+}
+div.errorMessages span:before {
+	font-family:FontAwesome;
+	color:red;
+	font-size:21px;
+	content:"\f057";
+	margin-right:5px;
+}
+input[type="text"], input[type="password"], input[type="number"], textarea {
+	margin-right:5px;
+	background-color:RGBA(55,55,55, 1);
+	color:white;
+	border:solid 1px RGB(95,158,160);
+	border-radius:5px;
+	padding:8px;
+	margin:0px;
+	box-sizing:border-box;
+}
+u {
+	color:#00ffff;
+	text-decoration:underline;
+}
+form .errorIcon {
+	display:none;
+}
+form .errorIcon:before {
+	font-family:FontAwesome;
+	color:red;
+	font-size:125%;
+	content:"\f057";
+}
+#footer {
+	color:white;
+	font-style:italic;
+	font-size:85%;
+	background:RGBA(35,35,35, 0.85);
+	width:100%;
+	display:inline-block;
+	text-align:center;
+	float:left;
+	padding:8px 0px 12px 0px;
+	overflow:hidden;
+	clear: both;
+    position: relative;
+    z-index: 10;
+    height:180px;
+    margin-top:-180px;
+	box-sizing:border-box;
+}
+#footer p {
+	margin:0px;
+}
+#footer div {
+	display:inline-block;
+	vertical-align:top;
+}
+#footer div.divider {
+	border-left:1px solid RGBA(95, 158, 160, 0.6);
+	border-right:1px solid RGBA(95, 158, 160, 0.6);
+	width:0px;
+	height:160px;
+}
+#footer div.block {
+	text-align:left;
+	width:30%;
+	max-width:400px;
+	margin:5px;
+}
+#footer h1 {
+	font-style:normal;
+	color:white;
+	font-family:'Oswald', open-sans;
+	font-weight:400;
+	margin:0px;
+}
+#footer a {
+	text-decoration:none;
+	color:inherit;
+	border-bottom:dotted 1px gray;
+}
+#footer a:hover {
+	color:#00ffff;
+}
+.failFlash {
+	background-color:#ff6666;
+	border-color:#ff6666;
+}
+.fixHeaderTop {
+	position:fixed;
+}
+.fixHeaderTopElse {
+	top:60px;
+}
+.javaButtonActive {
+	color:#00ffff !important; 
+}
+.inactiveLink {
+   pointer-events: none;
+   cursor: default;
+   color:#C0C0C0 !important;
+   -webkit-touch-callout: none;
+   -webkit-user-select: none;
+   -khtml-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+}
+
+
+
+/* MISC ANIMATIONS */
+
+
+
+@-webkit-keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -2000px, 0);
+    transform: translate3d(0, -2000px, 0);
+  }
+  50% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -2000px, 0);
+    transform: translate3d(0, -2000px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -2000px, 0);
+    transform: translate3d(0, -2000px, 0);
+  }
+  50% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -2000px, 0);
+    transform: translate3d(0, -2000px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInDownBig {
+    -webkit-animation-name: fadeInDownBig;
+    animation-name: fadeInDownBig;
+    -webkit-animation-timing-function:cubic-bezier(0.32, 0.72, 0.56, 0.99);
+    animation-timing-function:cubic-beziercubic-bezier(0.32, 0.72, 0.56, 0.99);
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+
+}
+@-webkit-keyframes rollOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+      display:none;
+    -webkit-transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+    transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+  }
+}
+
+@keyframes rollOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+      display:none;
+    -webkit-transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+    transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+  }
+}
+
+.rollOut {
+    -webkit-animation-name: rollOut;
+    animation-name: rollOut;
+    -webkit-animation-timing-function:cubic-bezier(0.32, 0.72, 0.56, 0.99);
+    animation-timing-function:cubic-beziercubic-bezier(0.32, 0.72, 0.56, 0.99);
+    -webkit-animation-duration: 250ms;
+    animation-duration: 250ms;
+
+}

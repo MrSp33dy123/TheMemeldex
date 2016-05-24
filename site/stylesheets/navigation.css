@@ -1,0 +1,110 @@
+#navigation {
+	width:100%;
+	position:relative;
+    font-family:'Oswald', Arial, sans-serif;
+	font-size:100%;
+	color:white;
+    z-index:2;
+}
+#navigation > ul {
+    overflow:visible; 
+    list-style:none; 
+    text-align:center;
+	-webkit-backdrop-filter:blur(10px);
+}
+#navigation div.background {
+	position:absolute;
+	top: 0px;
+	right:0px;
+	bottom:0px;
+	left:0px;
+	z-index:-1;
+	background-color:RGBA(95, 158, 160, 0.6);
+	border-top:solid 2px RGBA(95, 158, 160, 0.0);
+	transition:all linear 400ms;
+}
+#navigation li {
+	display:inline-block;
+	transition:all linear 0.08s;
+}
+#navigation li a {
+	display:inline-block;
+    padding:10px;
+}
+#navigation li.active {
+    background-color:RGBA(95, 158, 160, 0.85);
+}
+#navigation li:hover {
+    background-color:RGB(50,70,70);
+    box-shadow:3px 3px 6px 3px rgb(40,60,60) inset;	
+}
+#navigation li:hover ~ div.background {
+	background-color:RGBA(50,50,50, 0.8);
+	border-top:solid 2px RGB(95, 158, 160);
+}
+#navigation .mainMenu:after {
+    display:block;
+    clear:both;
+}
+#navigation .navMenu {
+    padding:8px;
+	padding-left:0px;
+	padding-right:0px;
+    position:absolute;
+    opacity:0;
+	color:inherit;
+	transition:opacity linear 150ms, background-color linear 400ms, border linear 250ms;
+	box-shadow:0px 2px 3px rgba(0,0,0,0.2);
+    display:none;
+}
+#navigation .dropDown {
+    top:100%;
+	left:-50%;
+	width:200%;
+}
+#navigation > ul > li {
+    position:relative;
+}
+#navigation .dropDown li {
+    display:block;
+	width:100%;
+	position:relative;
+}
+#navigation .dropDown li a {
+    display:inherit;
+	width:100%;
+	box-sizing:border-box;
+}
+#navigation .dropDown li a + .subMenu {
+	left:100%;
+	top:0%;
+	display:inline-block;
+	width:100%;
+	background-color:RGBA(50,50,50, 0.8);
+	box-sizing:border-box;
+	border-left:solid 2px RGBA(95, 158, 160, 0);
+}
+#navigation .dropDown li a:hover + .subMenu, #navigation .subMenu:hover {
+	opacity:1;
+    display:inline-block;
+}
+#navigation .subMenu:hover {
+	border-left:solid 2px RGB(95, 158, 160) !important;
+}
+#navigation .arrow-down {
+	font-size:12px;
+    line-height:0px;
+}
+#navigation .mainMenu li:hover .dropDown {
+    opacity:1;
+    background-color:RGBA(50,50,50, 0.8);
+    display:inline-block;
+}
+#navigation #newsButton {
+        display:none;
+    }
+@media only screen and (max-width: 1000px) {
+    #navigation #newsButton {
+        display:inline-block;
+    }
+}

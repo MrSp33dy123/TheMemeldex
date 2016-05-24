@@ -1,0 +1,104 @@
+.fa-spin:before {
+    -webkit-animation:fa-button-spin 10s infinite linear;
+    animation:fa-button-spin 10s infinite linear
+}
+@-webkit-keyframes fa-button-spin {
+    0%{-webkit-transform:rotate(0deg); transform:rotate(0deg)}
+    100%{-webkit-transform:rotate(359deg); transform:rotate(359deg)}
+}
+@keyframes fa-button-spin {
+    0%{-webkit-transform:rotate(0deg); transform:rotate(0deg)}
+    100%{-webkit-transform:rotate(359deg); transform:rotate(359deg)}
+}
+
+
+
+-webkit-@keyframes circlebottomanimation1 {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes circlebottomanimation1 {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+-webkit-@keyframes circletopanimation1 {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes circletopanimation1 {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+-webkit-@keyframes slashanimation1 {
+  to {
+    stroke-dashoffset: -280;
+  }
+}
+@keyframes slashanimation1 {
+  to {
+    stroke-dashoffset: -280;
+  }
+}
+
+-webkit-@keyframes tickanim1 {
+  to {
+    stroke-dashoffset: 180;
+  }
+}
+@keyframes tickanim1 {
+  to {
+    stroke-dashoffset: 180;
+  }
+}
+
+
+
+-webkit-@keyframes circlebottomanimation2 {
+  to {
+    stroke-dashoffset: -190;
+  }
+}
+@keyframes circlebottomanimation2 {
+  to {
+    stroke-dashoffset: -190;
+  }
+}
+
+-webkit-@keyframes circletopanimation2 {
+  to {
+    stroke-dashoffset: 190;
+  }
+}
+@keyframes circletopanimation2 {
+  to {
+    stroke-dashoffset: 190;
+  }
+}
+
+-webkit-@keyframes slashanimation2 {
+  to {
+    stroke-dashoffset: -180;
+  }
+}
+@keyframes slashanimation2 {
+  to {
+    stroke-dashoffset: -180;
+  }
+}
+
+-webkit-@keyframes tickanim2 {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes tickanim2 {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

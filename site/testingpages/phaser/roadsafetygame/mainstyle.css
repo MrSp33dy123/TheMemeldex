@@ -1,0 +1,277 @@
+@font-face {
+font-family: Code;
+src: url("fonts/CODE Light.otf") format("opentype");
+}
+@font-face {
+font-family: Code;
+font-weight: bold;
+src: url("fonts/CODE Bold.otf") format("opentype");
+}
+@font-face {
+font-family: WhyDoWeBlink;
+src: url("fonts/Why do we blink so frequently.ttf") format("truetype");
+}
+@font-face {
+font-family: Stellar;
+src: url("fonts/Stellar-light.otf") format("opentype");
+}
+* {
+    display:inline-block;
+    font-family:inherit;
+    margin:0px;
+}
+head {
+    display:none;
+}
+body {
+    margin:0px;
+    width:100vw;
+    height:100vh;
+    top:0px;
+    left:0px;
+    background-color:black;
+    overflow:hidden;
+}
+nav {
+    position:absolute;
+    width:100%;
+    top:0px;
+    text-align:center;
+    padding-top:5px;
+    transform:translate(0,-100%);
+}
+nav > a {
+    font-family:Stellar;
+    color:initial;
+    margin-right:8%;
+    margin-left:8%;
+    text-decoration: none;
+    transition:color linear 160ms;
+}
+
+
+
+#contentWrapper {
+    width:100%;
+    height:100%;
+}
+#title .main {
+    font-family:Code;
+    font-weight:bold;
+    color:RGBA(0,255,255,0.5);
+    font-size:120px;
+    line-height:90%;
+    -webkit-perspective: 1200px;
+    -moz-perspective: 1200px;
+    -ms-perspective: 1200px;
+    perspective: 1200px;
+    transition:opacity ease-in-out 280ms;
+}
+#title .sub {
+    font-family:Code;
+    color:white;
+    font-size:30px;
+    line-height:80%;
+    top:108%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    position:absolute !important;
+    transition:top ease-in-out 550ms;
+}
+.centered {
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    width:100%;
+}
+#bgVideo {
+    position:absolute;
+    top:0%;
+    left:50%;
+    height:100%;
+    width:100%;
+    z-index:-100;
+    -webkit-filter: blur(5px) grayscale(80%) brightness(50%);
+    filter: blur(5px) grayscale(80%) brightness(35%);
+    transform:translate(-50%);
+    transition:filter linear 250ms;
+    -webkit-transition:-webkit-filter linear 250ms;
+}
+@media (min-aspect-ratio: 7/3) {
+  #bgVideo {
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-aspect-ratio: 7/3) {
+  #bgVideo {
+    width: auto;
+    height: 100%;
+  }
+}
+.error {
+    text-align: center;
+    animation: noise 2s linear infinite;
+    position:relative;
+}
+.error:after {
+    content: 'A ROAD SAFETY GAME';
+    left:50%;
+    top:-50%;
+    transform:translate(-50%);
+    font-size: 38px;
+    font-style: italic;
+    width: 100vw;
+    height: 60px;
+    line-height: 50px;
+    position: absolute;
+    opacity: 0;
+    color: red;
+    animation: noise-1 .2s linear infinite;
+}
+.error:before {
+    content: 'A ROAD SAFETY GAME';
+    left:50%;
+    top:-50%;
+    transform:translate(-50%);
+    font-size: 38px;
+    font-style: italic;
+    width: 100vw;
+    height: 60px;
+    line-height: 50px;
+    position: absolute;
+    opacity: 0;
+    color: mediumblue;
+    animation: noise-2 .2s linear infinite;
+}
+@keyframes noise-1 {
+    0%, 20%, 40%, 60%, 70%, 90% {opacity: 0;}
+    10% {opacity: .1;}
+    50% {opacity: .5; left: 47%;}
+    80% {opacity: .3;}
+    100% {opacity: .6; left: 51%;}
+}
+@keyframes noise-2 {
+    0%, 20%, 40%, 60%, 70%, 90% {opacity: 0;}
+    10% {opacity: .1;}
+    50% {opacity: .5; left: 49%;}
+    80% {opacity: .3;}
+    100% {opacity: .6; left: 53%;}
+}
+@keyframes noise {
+  0%, 3%, 5%, 42%, 44%, 100% {opacity: 1; transform: scaleY(1) translate(-50%,-50%);;}  
+  4.3% {opacity: 1; transform: scaleY(1.7) translate(-50%,-50%);;}
+  43% {opacity: 1; transform: scaleX(1.5) translate(-50%,-50%);;}
+}
+
+
+#loadingText {
+    font-family:"Courier New", Courier, monospace;
+    color:white;
+    font-size:120%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;      
+    user-select: none;  
+}
+#loadingText p:nth-of-type(2) {
+    font-size:70%;
+}
+
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+
+#title .main span {
+    margin-right:22px;
+    margin-left:22px;
+    opacity:0;
+}
+
+.letterSpin {
+    -webkit-animation-name: spinner;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-duration: 2.5s;
+
+    animation-name: spinner;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-duration: 2.5s;
+    animation-fill-mode: forwards;
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+
+
+/* WebKit and Opera browsers */
+@-webkit-keyframes spinner {
+    from { -webkit-transform: rotateY(-270deg); opacity:0;}
+    to   { -webkit-transform: rotateY(-360deg); opacity:1;}
+}
+
+  /* all other browsers */
+@keyframes spinner {
+    from {
+        -moz-transform: rotateY(-270deg);
+        -ms-transform: rotateY(-270deg);
+        transform: rotateY(-270deg);
+        opacity:0;
+    }
+    to {
+        -moz-transform: rotateY(-360deg);
+        -ms-transform: rotateY(-360deg);
+        transform: rotateY(-360deg);
+        opacity:1;
+    }
+}
+
+@-webkit-keyframes navEntry {
+    from {transform:translate(0%,-100%); opacity:0;}
+    to {transform:translate(0%); opacity:1;}
+}
+@keyframes navEntry {
+    from {transform:translate(0%,-100%); opacity:0;}
+    to {transform:translate(0%); opacity:1;}
+}
+
+.navEntry {
+    -webkit-animation-name: navEntry;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-duration: 2.2s;
+
+    animation-name: navEntry;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+    animation-duration: 2.2s;
+    animation-fill-mode: forwards;
+}
+
+
+
+/* http://codepen.io/kaypooma/pen/ehfjC

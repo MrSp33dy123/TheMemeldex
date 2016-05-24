@@ -1,0 +1,363 @@
+/* ========================================================================================BUTTONS=*/
+.button {
+    display: inline-block;
+    border: solid 2px RGB(95, 158, 160) !important;
+    border-radius: 3px;
+	text-align: center;
+	cursor: pointer;
+	background-color: #5E5E5E;
+	z-index: 1;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+    padding: 3px 12px 3px 12px;
+	font-family: 'Oswald', Arial, sans-serif;
+    font-size: 16px;
+	letter-spacing: 0.5px;
+    position:relative;
+}
+.button:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    opacity: 0;
+    font-size: 30px;
+	color: #5E5E5E;
+    position: absolute;
+	vertical-align: middle;
+	text-align: center;
+	z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	transition: opacity linear 150ms, color linear 150ms;
+}
+.button:focus {
+    outline:none;
+}
+.button:hover {
+	background-color:RGB(74,105,105);
+}
+.button:active {
+	border-color:RGB(95,158,220) !important;
+}
+.button:hover:before {
+	color:RGB(50,50,50); 
+	opacity:1;
+}
+/* ==========================================================================================CHECKBOXES=*/
+input[type="checkbox"] {
+    
+}
+
+
+/* ==============================================================================================INPUTS=*/
+input[type="text"], input[type="password"], input[type="number"], select, textarea {
+	background-color:RGBA(55,55,55, 1);
+	color:white;
+	border:solid 1px RGB(95,158,160);
+	border-radius:5px;
+	padding:8px;
+	margin:0px;
+	box-sizing:border-box;
+    transition:all 210ms;
+}
+input[type="text"]:focus, input[type="password"]:focus, input[type="number"]:focus, select:focus, textarea:focus {
+    outline:none;
+    border-color:RGB(95,158,220);
+    box-shadow: 0 0 6px RGB(105,168,170);
+}
+*[required="required"] {
+    padding-left:29px !important;
+}
+textarea {
+    width:480px;
+    max-width:65%;
+    max-height:180px;
+   /* min-width:480px;
+    min-height:135px; */
+    overflow:auto;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+}
+textarea#backgroundMESSAGE {
+    background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" style="text-anchor:middle; dominant-baseline:mathematical; font-size:65px; font-family:Helvetica"><text x="50%" y="50%" fill="RGBA(225,225,100,0.1)">"MESSAGE"</text></svg>');
+}
+textarea#backgroundAUTHOR {
+    background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" style="text-anchor:middle; dominant-baseline:mathematical; font-size:26px; font-family:Helvetica"><text x="50%" y="50%" fill="RGBA(225,225,100,0.1)">-AUTHOR</text></svg>');
+}
+
+.tooltipBubble {
+    position:absolute;
+    padding:6px;
+    background-color:RGBA(35,35,35, 0.92);
+    border-radius:11px;
+    border:solid 1px RGB(255,255,128);
+    top:-30px;
+    font-size:80%;
+    pointer-events:none;
+}
+.tooltipBubble .arrow { 
+    position:absolute;
+    border-top: 10px solid RGB(255,255,128);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    z-index:0;
+    bottom: -10px;
+    height: 0px;
+    width: 0px;
+    left: 10px;
+}
+.tooltipBubble .arrow div {
+    position:absolute;
+    border-top: 11px solid RGBA(35,35,35, 1);
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    left: -11px;
+    top: -12px;
+    z-index:2;
+}
+.validationSymbol {
+    left:7px;
+    height:18px;
+    top:50%;
+    transform:translate(0%, -50%) rotate(-45deg);
+    transform-origin:center center;
+    position:absolute;
+    pointer-events:none;
+}
+.validationSymbol > path {
+    fill:none;
+    stroke-width:20;
+    animation-play-state: paused;
+    -webkit-animation-fill-mode: forwards !important;
+    animation-fill-mode:forwards !important;
+}
+.validationSymbol .circleBottom {
+    stroke-dasharray: 190;
+    stroke-dashoffset:0;
+}
+.validationSymbol .circleTop {
+    stroke-dasharray: 190;
+    stroke-dashoffset:0;
+}
+.validationSymbol .slash {
+    stroke-dasharray: 180;
+    stroke-dashoffset:-280;
+}
+.validationSymbol .tick {
+    stroke-dasharray: 180;
+    stroke-dashoffset:180;
+}
+.validationSymbol.animateToInvalid .circleBottom {
+    stroke-dashoffset:-190;
+   -webkit-animation: circlebottomanimation1 450ms 1 ease-in;
+    animation: circlebottomanimation1 450ms 1 ease-in;
+    animation-delay:600ms;
+    -webkit-animation-delay:600ms;
+}
+.validationSymbol.animateToInvalid .circleTop {
+    stroke-dashoffset:190;
+    -webkit-animation: circletopanimation1 450ms 1 ease-in;
+    animation: circletopanimation1 450ms 1 ease-in;
+    animation-delay:600ms;
+    -webkit-animation-delay:600ms;
+}
+.validationSymbol.animateToInvalid .slash {
+    stroke-dashoffset:-180;
+    -webkit-animation: slashanimation1 180ms 1 ease-out;
+    animation: slashanimation1 180ms 1 ease-out;
+    animation-delay:1050ms;
+    -webkit-animation-delay:1050ms;
+}
+.validationSymbol.animateToInvalid .tick {
+    stroke-dashoffset:0;
+    -webkit-animation: tickanim1 550ms 1 ease-in;
+    animation: tickanim1 550ms 1 ease-in;
+}
+
+.validationSymbol.animateToTick .circleBottom {
+    stroke-dasharray: 190;
+    stroke-dashoffset: 0;
+    -webkit-animation: circlebottomanimation2 450ms 1 ease-in;
+    animation: circlebottomanimation2 450ms 1 ease-in;
+}
+.validationSymbol.animateToTick .circleTop {
+    stroke-dasharray: 190;
+    stroke-dashoffset: 0;
+    -webkit-animation: circletopanimation2 450ms 1 ease-in;
+    animation: circletopanimation2 450ms 1 ease-in;
+}
+.validationSymbol.animateToTick .slash {
+    stroke-dasharray: 180;
+    stroke-dashoffset: -280;
+    -webkit-animation: slashanimation2 180ms 1 ease-out;
+    animation: slashanimation2 180ms 1 ease-out;
+    animation-delay:450ms;
+    -webkit-animation-delay:450ms;
+}
+.validationSymbol.animateToTick .tick {
+    stroke-dasharray: 180;
+    stroke-dashoffset: 180;
+    -webkit-animation: tickanim2 550ms 1 ease-out;
+    animation: tickanim2 550ms 1 ease-out;
+    animation-delay:650ms;
+    -webkit-animation-delay:600ms;
+}
+
+
+
+/* ========================================================================================ON/OFF SWITCH=*/
+.onoffswitch {
+    position: relative;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+    display:inline-block;
+    height:28px;
+}
+.onoffswitch span {
+    text-align:left;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: inline-block; 
+	overflow: hidden; 
+	cursor: pointer;
+    border:solid 2px RGB(95, 158, 160);
+	border-radius: 29px;
+    margin-right:3px;
+    width:65px;
+    float:left;
+    z-index:2;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 16px; padding: 0; line-height: 16px;
+    font-size: 14px; color: white; font-family:'Oswald', open-sans; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "ON";
+    padding-left: 14px;
+    color: #FFFFFF;
+	background-color:#5E5E5E;
+}
+.onoffswitch-inner:after {
+    content: "OFF";
+    padding-right: 14px;
+    background-color:#5E5E5E; 
+	color:white;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; 
+	width: 22px;
+    height: 22px; 
+	margin: -3px;
+    background:RGB(75,75,75);
+    position: absolute; top: 0; bottom: 0;
+    left: 1px;
+    border:inherit; 
+	border-color:red;
+	border-radius: 29px;
+    transition: all 0.3s ease-in 0s; 
+    z-index:3;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+	border-color:green;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+   left: 50px; 
+}
+/* ============================================================================================SECTION DIVIDER=*/
+div.sectionHeader {
+	height:18px;
+	margin-bottom:8px;
+}
+div.sectionHeader p {
+	float:left;
+	width:auto;
+	padding-right:7px !important;
+	padding-left:5px !important;
+	font-family:'Oswald';
+	line-height:100%;
+	font-style:italic;
+}
+div.sectionHeader div.horizontalDivider {
+	overflow:hidden;
+	top:50%;
+	position:relative;
+	height:2px;
+	box-sizing:border-box;
+	background: grey;
+    /* background: -moz-linear-gradient(left, rgba(54,54,54,0) 0%, grey 25px); 
+	background: -webkit-linear-gradient(left, rgba(54,54,54,0) 0%, grey 25px); 
+	background: linear-gradient(to right, rgba(54,54,54,0) 0%, grey 25px); */
+}
+div.sectionHeader div.leftLine {
+	height:2px;
+	width:22px;
+	background:grey;
+	float:left;
+	top:50%;
+	position:relative;
+}
+.tooltipPopup {
+    
+}
+
+.userAvatarBox {
+    width:170px;
+    height:170px;
+    border:solid 3px;
+    border-radius:3px;
+    border-color:lightblue;
+    position:relative;
+}
+.userAvatarBox > img {
+    max-width:100%;
+}
+.userAvatarBox > .overlay {
+    position:absolute;
+    top:0px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    transition: all linear 120ms;
+    background-color:RGBA(10,10,10, 0.60);
+    opacity:0;
+}
+.userAvatarBox > .overlay a:before {
+    font-family:FontAwesome;
+    margin-right:6px;
+    font-size:112%;
+}
+.userAvatarBox:hover > .overlay, .userAvatarBox.hover > .overlay {
+    opacity:1;
+}
+.userAvatarBox > .overlay a {
+    text-align:center;
+    transform: translate(-50%);
+    bottom:0px;
+    left:50%;
+    position:absolute;
+    width:100%;
+    Font-family:'Oswald';
+    letter-spacing:250%;
+    background-color:RGBA(10,10,10, 0.60);
+    line-height:200%;
+    transition:all linear 180ms !important;
+    border:none !important;
+}
+.userAvatarBox > .overlay a:hover, .userAvatarBox > .overlay a.hover {
+    color:cyan;
+}

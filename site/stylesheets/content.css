@@ -1,0 +1,311 @@
+#contentWrapper {
+    padding-left:18px;
+    padding-right:18px;
+    position:relative;
+    /*z-index:1;*/
+    text-align:center;
+}
+#content {
+    max-width:1400px;
+    padding-top:25px;
+    padding-bottom:255px;
+    width:100%;
+    display:inline-block;
+}
+.contentBox {
+	border:solid 2px RGB(95, 158, 160);
+	border-radius:3px;
+	background-color:RGBA(35,35,35, 0.97);
+    box-sizing:border-box;
+}
+.contentBox > .contentBoxHeader{
+    padding:8px;
+	margin-left:7px;
+    margin-right:7px;
+    padding-left:8px;
+    padding-right:8px;
+    border-bottom:solid 2px RGB(95, 158, 160);
+    text-align: left;
+}
+.contentBox > .main {
+    padding:15px;
+    text-align:left;
+}
+#content .dualColumn {
+    width:100%;
+	vertical-align:top;
+	position:relative;
+    display:block;
+    text-align:center;
+}
+#content .dualColumn > .leftBox {
+    margin-right:350px;
+    width: auto;
+    overflow: hidden;
+    display:block;
+}
+#content .dualColumn > .rightBox {
+    width:325px;
+    float:right;
+    display:inline-block;
+}
+@media only screen and (max-width: 1000px) {
+    #content .dualColumn > .leftBox {
+        margin-right:0px;
+        width:100%;
+        margin-bottom:25px;
+    }
+    #content .dualColumn > .rightBox {
+        display:none;
+    }
+}
+#notificationsBox {
+	border-color:RGB(255,255,128);
+	margin-bottom:25px;
+	width:100%;
+	box-sizing:border-box;
+	position:relative;
+	overflow:hidden;
+    padding:22px;
+    z-index:1;
+}
+#notificationsBox:hover {
+	cursor:pointer;
+}
+#notificationsBox .emblem, .emblemCover {
+    color:RGBA(255,255,128,0.22);
+    position:absolute;
+    left:110px;
+    top:50%;
+    transform:translate(-50%, -50%);
+    font: normal normal normal 170px/1 FontAwesome;
+    -webkit-font-smoothing: antialiased;
+    transition:all cubic-bezier(0.51, 0, 0.49, 0.99) 333ms 15ms;
+}
+#notificationsBox:hover .emblem {
+	left:50%;
+	z-index:3;
+	color:RGB(255,255,128);
+}
+#notificationsBox .coverOverlay {
+    position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	z-index:-3;
+	opacity:0;
+	transition:all ease-in-out 150ms;
+	background-color:RGBA(35,35,35, 0.88);
+}
+#notificationsBox:hover .coverOverlay {
+	z-index:2;
+	opacity:1;
+}
+#notificationsBox:hover div.emblemCover {
+	opacity:1;
+	left:%50;
+}
+#notificationsBox .hideText {
+    font-size:30px;
+	font-family:'Oswald', Arial, sans-serif;
+	text-shadow:1px;
+	text-decoration:none;
+    position:absolute;
+    line-height:0px;
+	top:50%;
+    left:50%;
+    transform:translate(-50%, 0%);
+    transition:all ease-in-out 125ms;
+    z-index:5;
+    opacity:0;
+}
+#notificationsBox:hover .hideText {
+    opacity:1;
+}
+#notificationsBox .text {
+    z-index:1;
+}
+#notificationsBox .emblemCover {
+    font-size:165px;
+	position:absolute;
+	z-index:4;
+    opacity:0;
+    left:60%;
+    color:RGB(35,35,35);
+}
+#notificationsBox:hover .emblemCover {
+    left:50%;
+}
+
+
+
+
+#content .dualColumnFlex > .leftBox {
+    width:49%;  
+}
+#content .dualColumnFlex > .rightBox {
+    width:49%;
+}
+@media only screen and (max-width: 1000px) {
+    #content .dualColumnFlex {
+        display: -webkit-flex; 
+        -webkit-flex-direction: column-reverse;
+        display: flex;
+        flex-direction:column-reverse; 
+    }
+    #content .dualColumnFlex > .leftBox {
+        width:100%;
+        margin-bottom:25px;
+        display:block;
+    }
+    #content .dualColumnFlex > .rightBox {
+        display:block;
+        width:100%;
+    }
+}
+#PSRgame > .leftBox {
+    width:50% !important; 
+    border-right:solid 2px grey; 
+    height:320px;
+    box-sizing: border-box;
+}
+#PSRgame > .rightBox {
+    width:50% !important; 
+    height:320px;
+}
+@media only screen and (max-width: 1000px) {
+    #PSRgame > .leftBox {
+        border-bottom:solid 2px grey;
+        border-right:none; 
+    }
+}
+
+#signUpPage div.main {
+     text-align:center;
+}
+#signUpPage div.tableContainer {
+    display:inline-block;
+    width:100%;
+}
+#signUpPage table {
+    width:100%;
+}
+#signUpPage table tr > td:first-of-type {
+    text-align:right;
+    padding-right:5px;
+    max-width:150px;
+    width:16%;
+}
+#signUpPage table tr > td input, textarea, select {
+    width:100% !important;
+    max-width:100% !important;
+    margin-bottom:4px;
+    margin-top:4px;
+}
+.imageUpload {
+    position:fixed;
+    left:0vw;
+    top:0vh;
+    width:100vw;
+    height:100vh;
+    z-index:300;
+    display:none;
+    text-align:center;
+}
+.imageUpload > .background {
+    position:absolute;
+    left:0vw;
+    top:0vh;
+    width:100vw;
+    height:100vh;
+    background-color:RGBA(10,10,10, 0.80);
+}
+.imageUpload > .content {
+    position:absolute;
+    left:50vw;
+    top:50vh;
+    transform:translate(-50%,-50%);
+    padding:18px;
+    padding-top:62px;
+    padding-bottom:48px;
+    overflow:hidden;
+    z-index:5;
+    min-width:600px;
+    min-height:400px;
+    text-align:center;
+}
+.imageUpload > .content:before {
+    font-family:FontAwesome;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    font-size:700%;
+    z-index:-3;
+    color:RGB(20,20,20);
+}
+.imageUpload > .info {
+    position:relative;
+    font-style:italic;
+    color:RGB(255,255,255);
+    top:25px;
+    background:RGB(20,20,20);
+    display:inline-block;
+}
+.imageUpload .header {
+    border-bottom:solid 1px RGB(95, 158, 160);
+    padding:6px;
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:100%;
+    padding-left:16px;
+    box-sizing:border-box;
+}
+.imageUpload .canvasWrapper {
+    border:solid 2px RGB(95, 158, 160);
+    padding:1px;
+    position: relative;
+    display: inline-block;
+    margin-top:3px;
+}
+.imageUpload .canvasWrapper div {
+    border-right:solid 12px transparent;
+    border-top:solid 18px RGBA(95, 158, 160, 0.78);
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:68px;
+}
+.imageUpload .canvasWrapper div:before {
+    content:"Preview";
+    position:absolute;
+    top:-18px;
+    left:6px;
+}
+.imageUpload .footer {
+    border-top:solid 1px RGB(95, 158, 160);
+    padding:6px;
+    position:absolute;
+    left:0px;
+    top:100%;
+    width:100%;
+    padding-left:16px;
+    box-sizing:border-box;
+    transform:translate(0%,-100%);
+}
+#jcrop {
+    border:solid 2px grey;
+    border-radius:3px;
+    display:inline-block;
+}
+.imageUpload a {
+    border-bottom:none !important;
+}
+.imageUpload .OKselect span {
+    transition:color linear 150ms !important;
+}
+.imageUpload .footer:hover span {
+    color:cyan;
+}

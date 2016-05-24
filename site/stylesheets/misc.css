@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    color:inherit;
+}
+html, body {
+    font-family: Arial, sans-serif;
+    color:white;
+    min-height:100vh;
+    border-style:none;
+	background-color:RGB(90, 90, 90);
+	background:linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("http://thememeldexstatic.altervista.org/assets/webpagebackgrounds/MemesComplaition.jpg");
+	background-repeat:repeat;
+}
+#wrapper {
+    min-height:100vh;
+}
+#bodyWrapper {
+    min-height:100vh;
+    margin-bottom:-180px;
+}
+a {
+    text-decoration:none;
+	cursor:pointer;
+    color:inherit;
+}
+b {
+    font-weight:bold;
+}
+li {
+    display:inline-block;
+}
+#content a, #footer a {
+	border-bottom:dotted 1px gray;
+    transition:border-bottom linear 120ms;
+}
+#content a:hover, #footer a:hover {
+	border-bottom:solid 1px white;
+}
+h1 {
+    font-style:normal;
+	font-family:'Oswald', open-sans;
+	font-size:188%;
+}
+.centeredY {
+    top: 50%;
+    transform: translate(0%, -50%);
+    position:relative;
+}
+.centeredX {
+    position:relative;
+    left: 50%;
+    transform: translate(-50%);
+}
+.centerAlign {
+    text-align:center;
+}
+i {
+    font-style: italic;
+}
+.errorIcon:before {
+	font-family:FontAwesome;
+	color:red;
+	font-size:125%;
+}
+.hidden {
+    display:none;
+}
+.disabled {
+    color:darkgrey;
+    pointer-events: none;
+}

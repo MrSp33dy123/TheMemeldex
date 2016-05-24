@@ -1,0 +1,81 @@
+=======================THE MEMELDEX CHANGELOG=======================
+
+The Memeldex 0.6e [7/02/2016 11:45PM] {
+	Changed way that the 'sign up' page displays the input fields, updated system now uses tables.
+	Generally fiddled around with the display of the 'sign up' page.
+	Implemented this new changelog, which can now be accessed from the page footer.
+	Added more fields onto the 'sign up' page.
+	Changed '>' to unicode chevrons on the footer division.
+	Updated footer links to have a dotted grey underline.
+}
+The Memeldex 0.6f [8/02/2016 6:11PM] {
+	Added a turquoise colour to footer hyperlinks when they're hovered over.
+	Fixed conflicting values between "box-sizing:content-box" and "box-sizing:border-box" on the notification and JavaScript error panels.
+	Updated the JavaScript 'hide notifications box' function to use client, session, and global variables to manage the hiding of the notifications box.
+	Implemented AJAX to pass variables from JavaScript to PHP.
+	Removed 'Databases' from the navigation dropdown menu.
+	Disabled PHP notices for the 'notifications' supcomponent, as it almost always throws multiple of them.
+}
+The Memeldex 0.6g [8/02/2016 6:31PM] {
+	Bugfixed the session variable working incorrectly for AlterVista: replaced the extra 'session_start()' line on the notifications subcomponent.
+}
+The Memeldex 0.7a [9/02/2016 12:27AM] {
+	Removed the 'disabled link' attribute on the admin nav button.
+	Added a downward pointing arrow to the admin nav button.
+	Added a dropdown submenu onto the admin nav button.
+	Increased all submenus to 200% width of parent label.
+	Removed submenu margin-left.
+	Fixed the submenu aligning system.
+	Relocated some JavaScript code into various function subcomponents.
+	Added a new JQuery 'on load' line for the 'sticky header' function.
+	Sticky header button now remembers its position throughout all pages as long as the session lasts, using sessionStorage on HTML5.
+	Login page can now search database for username and password, and reference it against a user's input details.
+	Added session PHP variables to store data for non 'remember password' users.
+	Fiddled with login page PHP and created some functions to organise the code.
+	Added PHP code for the username link of the nav bar to update with the user's account.
+	Created a new file for the new webpage 'notificationboxsettings' under the new admin directory.
+}
+The Memeldex 0.7b [11/02/16 4:12PM] {
+	Corrected a glitch on the login page that tried to call a function using the 'function' command.
+	Added a new button, the round button V2, to the button testing page.
+}
+The Memeldex 0.7c [15/02/2016 2:22AM] {
+	Removed the PHP that checks if the login fields are empty, and replaced it with JavaScript code.
+	Removed and replaced the tempFormSubmit JavaScript function, replaced by the new function mentioned above.
+	Added 'off' and 'on' colour states to the switch V2
+	Overhauled the navigation bar to both look better and be more practical: fades to black on hover, top-bordered with turquoise.
+	Box shadow added to buttons on the nav bar.
+	PHP overhauled to now work alongside JavaScript to check account login.
+	Fiddled slightly with PHP $_SESSION variables; I'm not sure how to use multidimensional arrays yet.
+}
+The Memeldex 0.7d [19/02/2016] {
+	Continued messing aroung with those (very annoying) nested arrays on PHP.
+	Renamed 'submenu' class to 'dropdown' class.
+	Added a new submenu that splits off to the side of the drop-down menu.
+	Added a submenu for 'JavaScript' to contain the masses of JS pages that will eventually end up there.
+	'HELL' has been updated to version 2 with new music, however there seems to be problems with the source being found.
+	Buttons on the menus now extend to 100% of the width of the menu.
+	Buttons that activate submenus now stay pressed down while hovering over the submenus.
+	Created new 'javascript' directory inside 'testingpages'.
+	Increased the height of the footer so it doesn't cut off the 'changelog' link. This will still need some updating in the future.
+	Fixed the version stamp on the footer.
+}
+The Memeldex 0.7e [20/02/2016 8:12PM] {
+	COMPLETE OVERHAUL TO 'HELL'! COME SEE WHAT GLORY HAS BEEN BESTOWED UPON THE INFAMOUS PAGE!
+	Figured out what was going wrong with the audio links. I now have a (while not optimal, still working) workaround.
+	This version will be going live to AlterVista. Yes. I know a bunch of things are broken. Pls give repense.
+	There is now a folder sub-directory that contains the javascript testing pages. This is creating many problems; I'm working on a fix.
+}
+The Memeldex 0.7f [22/02/2016 2:26AM] {
+	Used new <base> tag and PHP SERVER:SERVERNAME function to manage the silly base directory setup that has been bothering me recently.
+	Implemented a PHP function that prevents a redirect to index.php when clicking a link with a # placeholder.
+	The admin submenu is now protected using a cookie detection system. This is temporary.
+	Admin button is now coloured a light gold.
+}
+The Memeldex 0.8a [24/02/2016 1:16AM] {
+	Madlib page has been added. It involves input detection, randomized outputs, and doesn't always work correctly.
+}
+The Memeldex 0.8b [25/02/2016 1:01AM] {
+	Bugfixing has been done for some buttons/hyperlinks.
+	New canvas element testing has been implemented.
+}
