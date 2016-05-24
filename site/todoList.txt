@@ -1,0 +1,15 @@
+For browsers that support it; Gradiants and other smoothing teqniques on webpage.
+
+Expand on JavaScript usage.
+
+Make website usable without JavaScript, to some degree.
+
+Design a better website background, with seamless tiling and (possibly) have top and bottom tiles as well. This will need some research to code in, but looks possible.
+
+Look into PHP more to tidy up/optimize the system PHP uses to highlight the nav bar. 
+
+Footer needs adapting for smaller screens and different aspect ratios.
+
+Some coding styles have been mixed in due to referencing FimFiction code. Take a look and attempt to keep all code in the same style.
+
+Examine all instances of 'id' and change to 'class' where applicable.

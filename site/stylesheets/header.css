@@ -1,0 +1,101 @@
+#header {
+	text-align:left;
+	background-color:RGBA(50,50,50, 0.8);
+	top:0px;
+	width:100%;
+	height:52px;
+	z-index:180;
+    overflow:hidden;
+}
+#header a {
+	display:inline-block;
+	height:inherit;
+	position:relative;
+}
+#header a:hover {
+    background-color:RGB(50,50,50);
+	outline:0;
+    color:#00ffff;
+}
+#header a:active {
+    color:RGB(95,158,220);
+}
+#header .right {
+	float:right;
+	height:inherit;
+}
+#header .left {
+	float:none;
+	display:inline-block;
+	height:inherit;
+}
+#header a.pinHeader {
+	padding-left:12px;
+	padding-right:12px;
+}
+#header a.pinHeader:before {
+    position:relative;
+	font-size:30px;
+    color:inherit;
+    display: inline-block;
+    top:50%;
+    transform: translate(0%, -50%);
+}
+#header a.mainLogo > img {
+	padding:8px;
+	box-sizing:border-box;
+	height:100%;
+}
+#header a.headerButton {
+	height:100%;
+	padding-left:8px;
+	padding-right:8px;
+	text-decoration:none;
+	box-sizing:content-box;
+	vertical-align: top;
+}
+#header a.headerButton > p{
+	font-size:22px;
+	font-family:'Oswald', Arial, sans-serif;
+}
+#header a.signUpButton {
+	border-left: solid 2px RGB(95, 158, 160);
+	border-right: solid 2px RGB(95, 158, 160);
+}
+#header a.loginButton {
+	border-left: solid 2px RGB(95, 158, 160);
+}
+#header a.incompatibilityErr {
+    padding:0px;
+    margin-right:5px;
+    color:RGBA(240,128,128,0.7);
+}
+#header a.incompatibilityErr:before {
+    top: 50%;
+    transform: translate(0%, -50%);
+    position:relative;
+    display:inline-block;
+    font-size:100px;
+    transition:all linear 120ms;
+}
+#header a.incompatibilityErr:hover {
+    background:none;
+    color:rgb(190,98,98);
+}
+#header a.incompatibilityErr > p {
+    display:none;
+    position:fixed;
+    width:33vw;
+    top:50vh;
+    left:50vw;
+    transform: translate(-50%, -50%);
+    background-color:RGBA(45,20,20, 0.97);
+    padding:28px;
+    border:solid 2px RGB(95, 158, 160);
+	border-radius:3px;
+    color:white;
+}
+#header a.incompatibilityErr:hover > p {
+    display:inline-block;
+    z-index:90;
+}

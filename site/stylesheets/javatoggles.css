@@ -1,0 +1,17 @@
+.fixHeaderTop {
+	position:fixed;
+}
+.fixHeaderTopElse {
+	top:52px;
+}
+.javaButtonActive {
+	color:#00ffff !important; 
+}
+.javaInputBorderGreen:focus {
+    border-color:RGB(68,180,68) !important;
+    box-shadow: 0 0 6px RGB(78,180,78) !important;
+}
+.javaInputBorderRed:focus {
+    border-color:RGB(200,48,48) !important;
+    box-shadow: 0 0 6px RGB(200,68,68) !important;
+}
