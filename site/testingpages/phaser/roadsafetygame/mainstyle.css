@@ -276,6 +276,10 @@ nav > a {
     
 }
 
+#gameOverlay {
+    top: 50%;
+    position: absolute;
+}
 
 
 /* http://codepen.io/kaypooma/pen/ehfjC
