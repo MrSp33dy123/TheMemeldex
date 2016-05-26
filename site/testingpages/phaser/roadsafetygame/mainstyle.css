@@ -93,8 +93,8 @@ nav > a {
     height:100%;
     width:100%;
     z-index:-100;
-    -webkit-filter: blur(5px) grayscale(80%) brightness(50%);
-    filter: blur(5px) grayscale(80%) brightness(35%);
+    -webkit-filter: blur(5px) grayscale(80%) brightness(65%);
+    filter: blur(5px) grayscale(80%) brightness(65%);
     transform:translate(-50%);
     transition:filter linear 250ms;
     -webkit-transition:-webkit-filter linear 250ms;
@@ -124,8 +124,6 @@ nav > a {
     font-size: 38px;
     font-style: italic;
     width: 100vw;
-    height: 60px;
-    line-height: 50px;
     position: absolute;
     opacity: 0;
     color: red;
@@ -139,8 +137,6 @@ nav > a {
     font-size: 38px;
     font-style: italic;
     width: 100vw;
-    height: 60px;
-    line-height: 50px;
     position: absolute;
     opacity: 0;
     color: mediumblue;

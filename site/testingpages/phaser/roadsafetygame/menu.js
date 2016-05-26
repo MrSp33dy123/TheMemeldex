@@ -68,7 +68,7 @@ function backgroundMouseGradient(event) {
     var diffrential = Math.sqrt((event.pageX-=$(window).width()/2)*event.pageX + (event.pageY-=$(window).height()/2)*event.pageY);
     var threshold = $(window).height() * 1.35
     
-    $("#bgVideo").css("-webkit-filter","blur(5px) brightness(50%) grayscale("+ ((diffrential / threshold) * 200) +"%)");
+    $("#bgVideo").css("-webkit-filter","blur(5px) brightness(65%) grayscale("+ ((diffrential / threshold) * 200) +"%)");
 }
 
 
