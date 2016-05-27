@@ -82,9 +82,11 @@ $(document).mousemove(function(event){
 $("#title").hover(function() {
     $("#title .main").css('opacity','0');
     $("#title .sub").css('top','60%');
+    $("#title .sub").toggleClass('error');
 }, function() {
     $("#title .main").css('opacity','1');
     $("#title .sub").css('top','108%');
+    $("#title .sub").toggleClass('error');
 
 });
 

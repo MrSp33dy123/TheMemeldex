@@ -12,8 +12,7 @@ function initGame() {
         zoom: 8,
         streetViewControl: false
     });
-    getMapData();
-    console.log(mapData);
+    console.warn(getMapData());
     
     $('#nextLoc').click(function(){
         if (locIteration < mapData.length) {
@@ -27,13 +26,30 @@ function initGame() {
 
 function getMapData(answerInfo) {
     if (answerInfo == null) {answerInfo = []};
-
-    $.getJSON("testingpages/phaser/roadsafetygame/ajax/servegamedata.php", {'answer':answer, 'map':map, 'round':round}, function(result, status){
+    var response = "";
+    
+    $.ajax({
+        url: "testingpages/phaser/roadsafetygame/ajax/servegamedata.php",
+        data: {'answer':answerInfo[0], 'map':answerInfo[1], 'round':answerInfo[2]}
+    }).done(function(data, status){
         if (status == "success") {
-            return result;
+            alert('Success');
+            response = data;
         } else if (status != "notmodified") {
             alert("AJAX Error! Contact website adminstrator.");
         }
-    }); 
+        alert(status);
+    });
+    
+   /* $.getJSON("testingpages/phaser/roadsafetygame/ajax/servegamedata.php", {'answer':answerInfo[0], 'map':answerInfo[1], 'round':answerInfo[2]}, function(data, status) {
+        if (status == "success") {
+            alert('Success');
+            response = data;
+        } else if (status != "notmodified") {
+            alert("AJAX Error! Contact website adminstrator.");
+        }
+        alert('status');
+    });*/
+    return response;
 };
 
