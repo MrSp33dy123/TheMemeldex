@@ -17,35 +17,45 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ]
     );
     
-    //SETUP CONNECTION
-    $conn = new mysqli($SQLservername, $SQLusername, $SQLpassword);
-    
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    };
-    
-    //CREATE TABLE OR DATABASE IF NOT EXISTS
-    $conn->query("CREATE DATABASE IF NOT EXISTS ".$SQLdbname);
-    $conn->select_db($SQLdbname);
-    if (empty($conn->query("SELECT ID FROM ". array_keys($tableinfo)[0]))) {
-        echo array_keys($tableinfo)[0]." table not found, creating now! Database ".$SQLdbname." may have been created as well.";
-        $sql = "CREATE TABLE " . array_keys($tableinfo)[0] . " (" . implode(",", array_keys($tableinfo)[0], 1) . ")";
-        if (! $conn->query($sql)) {
-            printf("SQL create table failure: %s\n", $conn->error);
-        };
-    };
-
     try {
-        if ($_POST['answer'] == "") {
+        //SETUP CONNECTION
+        $conn = new mysqli($SQLservername, $SQLusername, $SQLpassword);
+
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        };
+
+        //CREATE TABLE OR DATABASE IF NOT EXISTS
+        $conn->query("CREATE DATABASE IF NOT EXISTS ".$SQLdbname);
+        $conn->select_db($SQLdbname);
+        if (empty($conn->query("SELECT ID FROM MAPDATA"))) {
+            echo "MAPDATA table not found, creating now! Database ".$SQLdbname." may have been created as well.";
+            $sql = "CREATE TABLE MAPDATA (" . implode(",", $tableinfo['MAPDATA']) . ")";
+            if (! $conn->query($sql)) {
+                printf("SQL create table failure: %s\n", $conn->error);
+            };
+        };
+
+        if (!isset($_POST['answer'])) {
             //Query Database for list of maps, including location info for each (but not answers)
-            $mapList = $conn->query("SELECT (MAPCODE, MAPNAME, MAPDESC, OFFICIAL) FROM ".array_keys($tableinfo)[0]);
-            echo json_encode($mapList);
+            $result = $conn->query("SELECT (MAPCODE,MAPNAME,MAPDESC,OFFICIAL) FROM MAPDATA");
+            $mapList = [];
             
+            echo "ACTIVE";
+            echo $result->num_rows();
+            while ($row = $result->fetch_assoc()) {
+                array_push($mapList, $row);
+                echo $row['MAPCODE'];
+            }
+            print_r($mapList);
+            
+            //echo json_encode($mapList);
         } else {
             //Query $_POST['answer'] in map $_POST['map'] for round $_POST['round]
             
         };
-    } catch(PDOException $e) {
+        $conn->close();
+    } catch(exception $e) {
         echo "Error: " . $e->getMessage();
     };
 } else {

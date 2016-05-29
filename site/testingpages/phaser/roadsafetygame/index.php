@@ -40,6 +40,9 @@
                 <audio id="bgCity" loop>
                     <source src="testingpages/phaser/roadsafetygame/media/cityhum1-loop.mp3" type="audio/mpeg">
                 </audio>
+                <audio id="glitch_sfx">
+                    <source src="testingpages/phaser/roadsafetygame/media/glitcheffect.mp3" type="audio/mpeg">
+                </audio>
                 <div id="contentWrapper">
                     <nav id="navigation">
                         <a href="">thememeldex</a>
@@ -49,7 +52,14 @@
                     </nav>
                     <div id="content">
                         <div id="loadingText" class="centered"><p></p><br><p></p></div>
-                        <a id="title" class="centered" onclick="initGame();" style="display:none;">
+                        <div id="accountOverlay">
+                            <div class="formWrapper centered">
+                                <form>
+                                    <p>Create a username</p><input name="username">
+                                </form>
+                            </div>
+                        </div>
+                        <a id="title" class="centered" style="display:none;">
                             <div class="main" style="display:none;"><span>J</span><span>A</span><span>Y</span><span>W</span><span>A</span><span>L</span><span>K</span><span>E</span><span>R</span></div><br>
                             <div class="sub error" style="display:none;">A Road Safety Game</div>
                         </a>

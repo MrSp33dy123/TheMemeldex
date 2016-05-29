@@ -15,6 +15,10 @@ src: url("fonts/Why do we blink so frequently.ttf") format("truetype");
 font-family: Stellar;
 src: url("fonts/Stellar-light.otf") format("opentype");
 }
+@font-face {
+font-family: Gravity;
+src: url("fonts/Gravity-Book.otf") format("opentype");
+}
 * {
     display:inline-block;
     font-family:inherit;
@@ -55,6 +59,9 @@ nav > a {
     width:100%;
     height:100%;
 }
+#title {
+    width:100%;
+}
 #title .main {
     font-family:Code;
     font-weight:bold;
@@ -77,6 +84,14 @@ nav > a {
     transform:translate(-50%,-50%);
     position:absolute !important;
     transition:top ease-in-out 550ms;
+    cursor: pointer; 
+    cursor: hand;
+}
+#title .sub > span {
+    transition:color linear 180ms;
+}
+#title .sub:hover > span {
+    color:cyan;
 }
 .centered {
     position:absolute;
@@ -84,7 +99,6 @@ nav > a {
     top:50%;
     transform:translate(-50%,-50%);
     text-align:center;
-    width:100%;
 }
 #bgVideo {
     position:absolute;
@@ -128,6 +142,7 @@ nav > a {
     opacity: 0;
     color: red;
     animation: noise-1 .2s linear infinite;
+    font-family: inherit;
 }
 .error:before {
     content: 'A ROAD SAFETY GAME';
@@ -141,6 +156,7 @@ nav > a {
     opacity: 0;
     color: mediumblue;
     animation: noise-2 .2s linear infinite;
+    font-family: inherit;
 }
 @keyframes noise-1 {
     0%, 20%, 40%, 60%, 70%, 90% {opacity: 0;}
@@ -266,6 +282,62 @@ nav > a {
     animation-iteration-count: 1;
     animation-duration: 2.2s;
     animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes glitchInstant {
+    0%,3%,5%,42%,44%,100% {opacity: 1; transform: scaleY(1);}
+    4.3% {opacity: 1; transform: scaleY(4);}
+    43% {opacity: 1; transform: scaleX(10) rotate(60deg);}
+}
+@keyframes glitchInstant {
+    0%,3%,5%,42%,44%,100% {opacity: 1; transform: scaleY(1);}
+    4.3% {opacity: 1; transform: scaleY(4);}
+    43% {opacity: 1; transform: scaleX(10) rotate(60deg);}
+}
+.glitchInstant {
+    -webkit-animation-name: glitchInstant;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 1s;
+
+    animation-name: glitchInstant;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+}
+
+#accountOverlay {
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    background-color:rgba(5,5,5,0.75);
+    display:none;
+}
+#accountOverlay > .formWrapper {
+    background-color:rgba(255,255,255,0.1);
+    padding:10px;
+    border-radius:100vh;
+    display:inline-block;
+}
+#accountOverlay > .formWrapper input {
+    background-color:rgba(10,10,10,0.5);
+    border-radius:100vh;
+    padding:5px;
+    padding-left:12px;
+    font-family:Gravity;
+    border:solid 1px black;
+    font-size:180%;
+    color:white;
+    width:30vw;
+    outline: none;
+}
+#accountOverlay > .formWrapper p {
+    color:white;
+    font-family:Gravity;
+    font-size:110%;
+    margin-right:15px;
 }
 
 #muteButton {

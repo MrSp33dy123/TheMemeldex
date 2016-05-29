@@ -30,26 +30,17 @@ function getMapData(answerInfo) {
     
     $.ajax({
         url: "testingpages/phaser/roadsafetygame/ajax/servegamedata.php",
-        data: {'answer':answerInfo[0], 'map':answerInfo[1], 'round':answerInfo[2]}
-    }).done(function(data, status){
-        if (status == "success") {
-            alert('Success');
-            response = data;
-        } else if (status != "notmodified") {
-            alert("AJAX Error! Contact website adminstrator.");
+        data: {'answer':answerInfo[0], 'map':answerInfo[1], 'round':answerInfo[2]},
+        type: 'POST',
+        async: false,
+        success: function(data){
+                alert(data);
+                response = data;
+        },
+        error: function(xhr,status){
+            console.error("AJAX " + status + " error! Contact website adminstrator.");
         }
-        alert(status);
     });
-    
-   /* $.getJSON("testingpages/phaser/roadsafetygame/ajax/servegamedata.php", {'answer':answerInfo[0], 'map':answerInfo[1], 'round':answerInfo[2]}, function(data, status) {
-        if (status == "success") {
-            alert('Success');
-            response = data;
-        } else if (status != "notmodified") {
-            alert("AJAX Error! Contact website adminstrator.");
-        }
-        alert('status');
-    });*/
     return response;
 };
 
