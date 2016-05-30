@@ -149,9 +149,9 @@ $('#title').click(function(){
     
 });
 
-$('#accountOverlay > .formWrapper > input').keyup(function(){
+$('#accountOverlay > .formWrapper input').keyup(function(){
     if ($(this).val().length < 2) {
-        
+        $(this).css({'border-color':'black','box-shadow':'none'});
     } else {
         $(this).css({'border-color':'RGB(68,180,68)','box-shadow':'0 0 6px RGB(78,180,78)'});
     }

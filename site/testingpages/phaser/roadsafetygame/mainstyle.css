@@ -330,14 +330,16 @@ nav > a {
     border:solid 1px black;
     font-size:180%;
     color:white;
-    width:30vw;
     outline: none;
+    text-align:center;
+    margin:8px;
+    min-width: 50vw;
+    transition:all linear 200ms;
 }
 #accountOverlay > .formWrapper p {
     color:white;
     font-family:Gravity;
-    font-size:110%;
-    margin-right:15px;
+    font-size:90%;
 }
 
 #muteButton {
