@@ -55,9 +55,7 @@
                         <div id="accountOverlay">
                             <div class="formWrapper centered">
                                 <form>
-                                    <p>How will your friends know you?</p><br>
-                                    <input name="username" spellcheck="false" autocomplete="off" type="text"><br>
-                                    <p>&#60;ENTER&#62;</p>
+                                    <input name="username" spellcheck="false" autocomplete="off" placeholder="How will your friends know you?" type="text"><br>
                                 </form>
                             </div>
                         </div>

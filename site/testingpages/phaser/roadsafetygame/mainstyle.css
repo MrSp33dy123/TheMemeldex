@@ -336,10 +336,36 @@ nav > a {
     min-width: 50vw;
     transition:all linear 200ms;
 }
-#accountOverlay > .formWrapper p {
-    color:white;
-    font-family:Gravity;
-    font-size:90%;
+
+#accountOverlay > .formWrapper input::-webkit-input-placeholder {
+    font-family:"Courier New", Courier, monospace;
+    font-size:75%;
+    vertical-align: middle;
+    opacity:0.5;
+}
+#accountOverlay > .formWrapper input:-moz-placeholder {
+    font-family:"Courier New", Courier, monospace;
+    font-size:75%;
+    vertical-align: middle;
+    opacity:0.5;
+}
+#accountOverlay > .formWrapper input:-moz-placeholder {
+    font-family:"Courier New", Courier, monospace;
+    font-size:75%;
+    vertical-align: middle;
+    opacity:0.5;
+}
+#accountOverlay > .formWrapper input:-ms-input-placeholder {
+    font-family:"Courier New", Courier, monospace;
+    font-size:75%;
+    vertical-align: middle;
+    opacity:0.5;
+}
+#accountOverlay > .formWrapper input::-webkit-input-placeholder {
+    font-family:"Courier New", Courier, monospace;
+    font-size:75%;
+    vertical-align: middle;
+    opacity:0.5;
 }
 
 #muteButton {
