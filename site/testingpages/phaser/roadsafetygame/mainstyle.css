@@ -337,36 +337,47 @@ nav > a {
     transition:all linear 200ms;
 }
 
+/* Default */
 #accountOverlay > .formWrapper input::-webkit-input-placeholder {
-    font-family:"Courier New", Courier, monospace;
-    font-size:75%;
-    vertical-align: middle;
-    opacity:0.5;
+    font-family:Gravity;
+    font-size:60%;
+    opacity:0.5;   
+    transition: opacity 0.35s ease-in-out;
 }
 #accountOverlay > .formWrapper input:-moz-placeholder {
-    font-family:"Courier New", Courier, monospace;
-    font-size:75%;
-    vertical-align: middle;
-    opacity:0.5;
-}
-#accountOverlay > .formWrapper input:-moz-placeholder {
-    font-family:"Courier New", Courier, monospace;
-    font-size:75%;
-    vertical-align: middle;
-    opacity:0.5;
+    font-family:Gravity;
+    font-size:60%;
+    opacity:0.5;   
+    transition: opacity 0.35s ease-in-out;
 }
 #accountOverlay > .formWrapper input:-ms-input-placeholder {
-    font-family:"Courier New", Courier, monospace;
-    font-size:75%;
-    vertical-align: middle;
-    opacity:0.5;
+    font-family:Gravity;
+    font-size:60%;
+    opacity:0.5;   
+    transition: opacity 0.35s ease-in-out;
 }
-#accountOverlay > .formWrapper input::-webkit-input-placeholder {
-    font-family:"Courier New", Courier, monospace;
-    font-size:75%;
-    vertical-align: middle;
-    opacity:0.5;
+/* Hover */
+#accountOverlay > .formWrapper input:hover::-webkit-input-placeholder {
+    opacity:0.8;   
 }
+#accountOverlay > .formWrapper input:hover:-moz-placeholder {
+    opacity:0.8;
+}
+#accountOverlay > .formWrapper input:hover:-ms-input-placeholder {
+    opacity:0.8;
+}
+/* Focus */
+#accountOverlay > .formWrapper input:focus::-webkit-input-placeholder {
+    opacity:0; 
+}
+#accountOverlay > .formWrapper input:focus:-moz-placeholder {
+    opacity:0; 
+}
+#accountOverlay > .formWrapper input:focus:-ms-input-placeholder {
+    opacity:0; 
+}
+
+
 
 #muteButton {
     
