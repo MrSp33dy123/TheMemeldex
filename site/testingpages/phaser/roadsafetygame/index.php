@@ -53,11 +53,13 @@
                     <div id="content">
                         <div id="loadingText" class="centered"><p></p><br><p></p></div>
                         <div id="accountOverlay">
-                            <div class="formWrapper centered">
-                                <form>
-                                    <input name="username" spellcheck="false" autocomplete="off" maxlength="32" placeholder="How will your friends know you?" type="text"><br>
+                            <div class="formWrapper">
+                                <form id="createAccountForm" class="centered">
+                                    <input id="usernameInput" name="username" spellcheck="false" autocomplete="off" maxlength="32" placeholder="How will your friends know you?" type="text"><br>
                                 </form>
+                                <div class="background"></div>
                             </div>
+                            
                         </div>
                         <a id="title" class="centered" style="display:none;">
                             <div class="main" style="display:none;"><span>J</span><span>A</span><span>Y</span><span>W</span><span>A</span><span>L</span><span>K</span><span>E</span><span>R</span></div><br>

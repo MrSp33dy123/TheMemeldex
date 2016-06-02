@@ -312,14 +312,19 @@ nav > a {
     left:0px;
     width:100%;
     height:100%;
-    background-color:rgba(5,5,5,0.75);
     display:none;
+}#accountOverlay > .formWrapper {
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
 }
-#accountOverlay > .formWrapper {
+#accountOverlay #createAccountForm {
     background-color:rgba(255,255,255,0.1);
     padding:10px;
     border-radius:100vh;
     display:inline-block;
+    z-index: 5;
 }
 #accountOverlay > .formWrapper input {
     background-color:rgba(10,10,10,0.5);
@@ -334,7 +339,16 @@ nav > a {
     text-align:center;
     margin:8px;
     min-width: 50vw;
-    transition:all linear 200ms;
+    transition:box-shadow linear 200ms, border-color linear 40ms;
+}
+#accountOverlay > .formWrapper .background {
+    position:fixed;
+    top:0vh;
+    left:0vw;
+    width:100vw;
+    height:100vh;
+    background-color:rgba(5,5,5,0.75);
+    z-index: 3;
 }
 
 /* Default */
@@ -386,6 +400,14 @@ nav > a {
 #gameOverlay {
     top: 50%;
     position: absolute;
+}
+
+
+.flashRed {
+    border-color:red !important;
+}
+.flashGreen {
+    border-color:green !important;
 }
 
 

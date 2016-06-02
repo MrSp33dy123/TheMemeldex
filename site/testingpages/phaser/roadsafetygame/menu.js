@@ -143,17 +143,59 @@ $('#title').click(function(){
         $('#accountOverlay').fadeIn(300);
         $('#title').fadeOut(300);
         $('nav').fadeOut(300);
+        $(document).keyup(function(e) {
+            if (e.keyCode == 27) { //Escape key
+                $('#accountOverlay').fadeOut(300);
+                $('#title').fadeIn(300);
+                $('nav').fadeIn(300);
+            }
+        });
+        $(".formWrapper").on("click", ".background", function() {
+            $("#accountOverlay").fadeOut(480);
+            $('#title').fadeIn(300);
+            $('nav').fadeIn(300);
+        });
+        $('#createAccountForm').submit(function(event) {
+            event.preventDefault();
+            var flashCount = 4;
+            if ($('#usernameInput').val().length < 2) {
+                var flashRed = setInterval(function(){
+                    if (flashCount <= 0) {
+                        clearInterval(flashRed);
+                    } else {
+                        $('#usernameInput').toggleClass('flashRed');
+                    }
+                    flashCount--
+                },100);
+            } else {
+                username = $('#usernameInput').val();
+                var flashGreen = setInterval(function(){
+                    if (flashCount <= 0) {
+                        clearInterval(flashGreen);
+                    } else {
+                        $('#usernameInput').toggleClass('flashGreen');
+                    }
+                    flashCount--
+                },100);
+                document.cookie = "username=" + username + "; expires=" + (Date.now + 15000) + " UTC";
+            }
+        });
     } else {
         username = getCookie('username');
     }
     
 });
 
+
+
+
+
+
 $('#accountOverlay > .formWrapper input').keyup(function(){
     if ($(this).val().length < 2) {
-        $(this).css({'border-color':'black','box-shadow':'none'});
+        $(this).css({'box-shadow':'none'});
     } else {
-        $(this).css({'border-color':'RGB(48,160,48)','box-shadow':'0 0 6px RGB(48,130,48)'});
+        $(this).css({'box-shadow':'0 0 6px RGB(48,130,48)'});
     }
 });
 
