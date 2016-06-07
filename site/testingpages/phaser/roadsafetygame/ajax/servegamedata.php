@@ -1,7 +1,7 @@
 <?php
 error_reporting(E_ALL & E_NOTICE);
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+//if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $SQLservername = "127.0.0.1";
     $SQLusername = "root";
     $SQLpassword = "";
@@ -35,30 +35,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 printf("SQL create table failure: %s\n", $conn->error);
             };
         };
-
         if (!isset($_POST['answer'])) {
             //Query Database for list of maps, including location info for each (but not answers)
-            $result = $conn->query("SELECT (MAPCODE,MAPNAME,MAPDESC,OFFICIAL) FROM MAPDATA");
+            $result = $conn->query("SELECT MAPCODE, MAPNAME, MAPDESC, OFFICIAL FROM MAPDATA");
             $mapList = [];
-            
-            echo "ACTIVE";
-            echo $result->num_rows();
+        
             while ($row = $result->fetch_assoc()) {
                 array_push($mapList, $row);
-                echo $row['MAPCODE'];
             }
-            print_r($mapList);
-            
-            //echo json_encode($mapList);
+            echo json_encode($mapList);
         } else {
-            //Query $_POST['answer'] in map $_POST['map'] for round $_POST['round]
-            
+            //Query $_POST['answer'] in map $_POST['map'] for round $_POST['round']
         };
         $conn->close();
     } catch(exception $e) {
         echo "Error: " . $e->getMessage();
     };
-} else {
-    echo('<p>This page is for use as part of a POST request; it is not supposed to be viewed in the browser.</p>');
-};
+//} else {
+//    echo('<p>This page is for use as part of a POST request; it is not supposed to be viewed in the browser.</p>');
+//};
 ?>

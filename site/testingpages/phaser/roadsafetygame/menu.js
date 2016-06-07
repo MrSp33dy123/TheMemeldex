@@ -178,12 +178,18 @@ $('#title').click(function(){
                     flashCount--
                 },100);
                 document.cookie = "username=" + username + "; expires=" + (Date.now + 15000) + " UTC";
+                setTimeout(function(){
+                    selectMap();
+                },900);
             }
         });
     } else {
         username = getCookie('username');
+        document.cookie = "username=" + username + "; expires=" + (Date.now + 15000) + " UTC";
+        setTimeout(function(){
+            selectMap();
+        },900);
     }
-    
 });
 
 
@@ -198,6 +204,28 @@ $('#accountOverlay > .formWrapper input').keyup(function(){
         $(this).css({'box-shadow':'0 0 6px RGB(48,130,48)'});
     }
 });
+
+function selectMap() {
+    $('#loadingText').hide();
+    $('#accountOverlay').hide();
+    $('#title').hide();
+    $.ajax({
+        url: "testingpages/phaser/roadsafetygame/ajax/servegamedata.php",
+        data: {},
+        type: 'POST',
+        success: function(data){
+            $('#selectMap').fadeIn(500);
+            
+            /*JSON.parse(data).forEach(function(){
+                $('#selectMap').append('<div></div>');
+            });*/
+        },
+        error: function(xhr,status){
+            console.error("AJAX " + status + " error! Contact website adminstrator.");
+        }
+    });
+}
+
 
 function getCookie(cname) {
     var name = cname + "=";

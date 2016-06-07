@@ -53,7 +53,12 @@ nav > a {
     transition:color linear 160ms;
 }
 
-
+#map {
+    top:0px;
+    left:0px;
+    position:fixed;
+    display:none;
+}
 
 #contentWrapper {
     width:100%;

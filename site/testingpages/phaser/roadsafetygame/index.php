@@ -47,8 +47,7 @@
                     <nav id="navigation">
                         <a href="">thememeldex</a>
                         <a>help</a>
-                        <a>login</a>
-                        <a>register</a>
+                        <?php if(isset($_COOKIE['username'])) {echo("<a>".$_COOKIE['username']."</a>");} ?>
                     </nav>
                     <div id="content">
                         <div id="loadingText" class="centered"><p></p><br><p></p></div>
@@ -65,6 +64,13 @@
                             <div class="main" style="display:none;"><span>J</span><span>A</span><span>Y</span><span>W</span><span>A</span><span>L</span><span>K</span><span>E</span><span>R</span></div><br>
                             <div class="sub error" style="display:none;">A Road Safety Game</div>
                         </a>
+                        <div id="selectMap">
+                            <div>
+                                <img alt="" src="">
+                                <p class="title">Christchurch, New Zealand</p>
+                                <p class="description">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            </div>
+                        </div>
                         <div id="muteButton" class="fa fa-volume-up" aria-hidden="true"></div>
                         <div id="map" style="height:100vh; width:100vw;"></div>
                         <div id="gameOverlay">

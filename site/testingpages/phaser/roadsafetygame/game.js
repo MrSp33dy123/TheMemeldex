@@ -6,13 +6,17 @@ var mapData = [
 ];
 
 function initGame() {
+    $('#loadingText').hide();
+    $('#accountOverlay').hide();
+    $('#title').hide();
+    //$('#map').show();
     var map = new google.maps.Map(document.getElementById('map'), {
         mapTypeId: google.maps.MapTypeId.SATELLITE,
         scrollwheel: true,
         zoom: 8,
         streetViewControl: false
     });
-    console.warn(getMapData());
+    getMapData({callback:startGame});
     
     $('#nextLoc').click(function(){
         if (locIteration < mapData.length) {
@@ -24,23 +28,8 @@ function initGame() {
     });
 }
 
-function getMapData(answerInfo) {
-    if (answerInfo == null) {answerInfo = []};
-    var response = "";
-    
-    $.ajax({
-        url: "testingpages/phaser/roadsafetygame/ajax/servegamedata.php",
-        data: {'answer':answerInfo[0], 'map':answerInfo[1], 'round':answerInfo[2]},
-        type: 'POST',
-        async: false,
-        success: function(data){
-                alert(data);
-                response = data;
-        },
-        error: function(xhr,status){
-            console.error("AJAX " + status + " error! Contact website adminstrator.");
-        }
-    });
-    return response;
-};
 
+
+function startGame() {
+    
+}
