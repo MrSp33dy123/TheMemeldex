@@ -411,33 +411,63 @@ nav > a {
     border-radius: 2px;
     background-color:black;
     position:relative;
+    transition:all ease-in-out 550ms;
 }
-#selectMap > div > .title {
+#selectMap > div > .text {
     width:100%;
     top:50%;
     left:0px;
+    max-height:100%;
+    min-height:5px;
     transform:translate(0%,-50%);
+    position:absolute;
+    z-index: 3;
+    background-color: rgba(0,0,0,0.5);
+    transition:all ease-in-out 550ms;
+    color:white;
+    display:block;
+}
+#selectMap > div > .text > .title {
     font-family:Code;
     font-weight:bold;
-    position:absolute;
-    color:white;
-    z-index: 3;
+    font-size:150%;
+    color:inherit;
+    transition:inherit;
+    border-color:cyan;
+    margin:8px;
+    display:block;
 }
-#selectMap > div > .description {
-    width:100%;
-    top:0px;
-    left:0px;
-    position:absolute;
-    height:100%;
-    display: table-cell; 
-    vertical-align: middle; 
-    text-align: center;
+#selectMap > div > .text > .description {
     z-index:2;
+    opacity:0;
+    overflow-y:scroll;
+    display:none;
+    padding:5px;
 }
 #selectMap > div > img {
     width:100%;
     height:100%;
     z-index: 1;
+}
+#selectMap > div:hover {
+    transform:scale(1.1);
+}
+#selectMap > div:hover > .text {
+    top:0%;
+    min-height:100%;
+    transform:translate(0%,0%);
+    font-size:100%;
+    background-color:rgba(0,0,0,0.8);
+}
+#selectMap > div:hover > .text > .title {
+    font-size:110%;
+    border-bottom:solid 2px cyan;
+    padding-bottom:5px;
+    margin-bottom:0px;
+}
+#selectMap > div:hover > .text > .description {
+    opacity:1;
+    display:initial;
 }
 
 #muteButton {
